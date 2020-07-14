@@ -3,60 +3,191 @@ import React from 'react'
 export function Home() {
   return (
     <div>
-      <h1>Hello Student!</h1>
-      <p>Welcome to your new SDG SPA, built with:</p>
-      <ul>
-        <li>
-          <a href="https://get.asp.net/">ASP.NET Core</a> and{' '}
-          <a href="https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx">
-            C#
-          </a>{' '}
-          for cross-platform server-side code
-        </li>
-        <li>
-          <a href="https://facebook.github.io/react/">React</a> for client-side
-          code
-        </li>
-        <li>
-          <a href="https://www.typescriptlang.org/">Typescript</a> for better
-          client-side code
-        </li>
-        <li>
-          <a href="https://sass-lang.com/">Sass</a> for better css
-        </li>
-        <li>
-          <a href="http://getbootstrap.com/">Bootstrap</a> for layout and
-          styling
-        </li>
-      </ul>
-      <p>To help you get started, we have also set up:</p>
-      <ul>
-        <li>
-          <strong>Client-side navigation</strong>.
-        </li>
-        <li>
-          <strong>Development server integration</strong>. In development mode,
-          the development server from <code>create-react-app</code> runs in the
-          background automatically, so your client-side resources are
-          dynamically built on demand and the page refreshes when you modify any
-          file.
-        </li>
-        <li>
-          <strong>Efficient production builds</strong>. In production mode,
-          development-time features are disabled, and your{' '}
-          <code>dotnet publish</code> configuration produces minified,
-          efficiently bundled JavaScript files.
-        </li>
-        <li>
-          <strong>Docker</strong>.
-        </li>
-      </ul>
-      <p>
-        The <code>ClientApp</code> subdirectory is a standard React application
-        based on the <code>create-react-app</code> template. If you open a
-        command prompt in that directory, you can run <code>npm</code> commands
-        such as <code>npm test</code> or <code>npm install</code>.
-      </p>
+      <section>
+        <div className="table">
+          <h1>POINTS PER GAME</h1>
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>School</th>
+                <th>Position</th>
+                <th>PPG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ezri Fontel </td>
+                <td>Ecole Nationale Supérieur HS </td>
+                <td>PG</td>
+                <td>9.74</td>
+              </tr>
+              <tr>
+                <td>Win Frushard </td>
+                <td>Marlboro College </td>
+                <td>C</td>
+                <td>3.74</td>
+              </tr>
+              <tr>
+                <td>Renee Luten </td>
+                <td>High School of Arts and Crafts</td>
+                <td>PF</td>
+                <td>29.40</td>
+              </tr>
+              <tr>
+                <td>Binnie Linton </td>
+                <td>High School of Technology </td>
+                <td>SG</td>
+                <td>1.09</td>
+              </tr>
+              <tr>
+                <td>Andrej Syalvester </td>
+                <td>Institute of Pharmaceutical Sciences High School </td>
+                <td>PF</td>
+                <td>13.22</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="table">
+          <h1>REBOUNDS PER GAME</h1>
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>School</th>
+                <th>Position</th>
+                <th>RPG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ezri Fontel </td>
+                <td>Ecole Nationale Supérieur de Géologie de Nancy </td>
+                <td>PG</td>
+                <td>5.74</td>
+              </tr>
+              <tr>
+                <td>Win Frushard </td>
+                <td>Marlboro College </td>
+                <td>C</td>
+                <td>9.14</td>
+              </tr>
+              <tr>
+                <td>Renee Luten </td>
+                <td>California College of Arts and Crafts</td>
+                <td>PF</td>
+                <td>9.40</td>
+              </tr>
+              <tr>
+                <td>Binnie Linton </td>
+                <td>Federal University of Technology, Yola </td>
+                <td>SG</td>
+                <td>3.09</td>
+              </tr>
+              <tr>
+                <td>Andrej Syalvester </td>
+                <td>Hokkaido Institute of Pharmaceutical Sciences </td>
+                <td>PF</td>
+                <td>10.22</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="table">
+          <h1>STEALS PER GAME</h1>
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>School</th>
+                <th>Position</th>
+                <th>SPG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ezri Fontel </td>
+                <td>Ecole Nationale Supérieur de Géologie de Nancy </td>
+                <td>PG</td>
+                <td>2.74</td>
+              </tr>
+              <tr>
+                <td>Win Frushard </td>
+                <td>Marlboro College </td>
+                <td>C</td>
+                <td>0.14</td>
+              </tr>
+              <tr>
+                <td>Renee Luten </td>
+                <td>California College of Arts and Crafts</td>
+                <td>PF</td>
+                <td>1.40</td>
+              </tr>
+              <tr>
+                <td>Binnie Linton </td>
+                <td>Federal University of Technology, Yola </td>
+                <td>SG</td>
+                <td>4.09</td>
+              </tr>
+              <tr>
+                <td>Andrej Syalvester </td>
+                <td>Hokkaido Institute of Pharmaceutical Sciences </td>
+                <td>PF</td>
+                <td>1.02</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="table">
+          <h1>BLOCKS PER GAME</h1>
+          <table className="table table-hover">
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>School</th>
+                <th>Position</th>
+                <th>BPG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ezri Fontel </td>
+                <td>Ecole Nationale Supérieur de Géologie de Nancy </td>
+                <td>PG</td>
+                <td>1.74</td>
+              </tr>
+              <tr>
+                <td>Win Frushard </td>
+                <td>Marlboro College </td>
+                <td>C</td>
+                <td>4.7</td>
+              </tr>
+              <tr>
+                <td>Renee Luten </td>
+                <td>California College of Arts and Crafts</td>
+                <td>PF</td>
+                <td>1.40</td>
+              </tr>
+              <tr>
+                <td>Binnie Linton </td>
+                <td>Federal University of Technology, Yola </td>
+                <td>SG</td>
+                <td>0.09</td>
+              </tr>
+              <tr>
+                <td>Andrej Syalvester </td>
+                <td>Hokkaido Institute of Pharmaceutical Sciences </td>
+                <td>PF</td>
+                <td>2.60</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   )
 }

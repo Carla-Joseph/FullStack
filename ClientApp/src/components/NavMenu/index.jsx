@@ -38,7 +38,7 @@ export class NavMenu extends Component {
         >
           <Container>
             <NavbarBrand tag={Link} to="/">
-              FullStack
+              🏀 FullStack
             </NavbarBrand>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse
@@ -48,18 +48,30 @@ export class NavMenu extends Component {
             >
               <ul className="navbar-nav flex-grow">
                 <NavItem>
+                  <form className="navbar-form navbar-left" role="search">
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Search"
+                      />
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                      Submit
+                    </button>
+                  </form>
                   <NavLink tag={Link} className="text-dark" to="/">
                     Home
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/counter">
-                    Counter
+                  <NavLink tag={Link} className="text-dark" to="/players">
+                    Players
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/typescript">
-                    Typescript
+                    {/* Typescript */}
                   </NavLink>
                 </NavItem>
               </ul>

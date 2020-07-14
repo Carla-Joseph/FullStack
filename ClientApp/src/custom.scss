@@ -12,3 +12,25 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.table div {
+  display: block;
+  flex-direction: row;
+}
+
+div {
+  max-width: 500px;
+  margin: 2rem;
+}
+
+
+div h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
