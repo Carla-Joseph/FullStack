@@ -74,6 +74,11 @@ export class NavMenu extends Component {
                     {/* Typescript */}
                   </NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="text-dark" to="/addplayer">
+                    Add Players
+                  </NavLink>
+                </NavItem>
               </ul>
             </Collapse>
           </Container>
