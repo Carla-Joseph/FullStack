@@ -30,11 +30,11 @@ section {
   flex-wrap: wrap;
 }
 
-.form-group div {
+.form-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
-  margin: 3px;
+  margin: 7px;
 }
 
 

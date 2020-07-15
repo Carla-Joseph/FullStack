@@ -7,7 +7,6 @@ export function AddPlayer() {
 
       <form>
         <div className="form-group">
-          <label htmlFor="name">Player's Name: </label>
           <input
             type="text"
             className="form-control"
@@ -17,7 +16,6 @@ export function AddPlayer() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="name">Team's Name: </label>
           <input
             type="text"
             className="form-control"
@@ -27,7 +25,6 @@ export function AddPlayer() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="name">Position: </label>
           <select class="form-control">
             <option>PG</option>
             <option>SG</option>
@@ -38,7 +35,6 @@ export function AddPlayer() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="name">Player's Number: </label>
           <input
             type="int"
             className="form-control"
@@ -48,7 +44,6 @@ export function AddPlayer() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="name">Points: </label>
           <input
             type="int"
             className="form-control"
@@ -58,7 +53,6 @@ export function AddPlayer() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="name">Rebounds: </label>
           <input
             type="int"
             className="form-control"
@@ -68,7 +62,6 @@ export function AddPlayer() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="name">Blocks: </label>
           <input
             type="int"
             className="form-control"
@@ -78,7 +71,6 @@ export function AddPlayer() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="name">Steals: </label>
           <input
             type="number"
             className="form-control"
@@ -86,6 +78,10 @@ export function AddPlayer() {
             placeholder="Steals"
           />
         </div>
+
+        <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
       </form>
     </div>
   )
