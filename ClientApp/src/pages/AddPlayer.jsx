@@ -1,17 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export function AddPlayer() {
-  return (
-    <div className="card">
-      <div className="card-header">Add a Player</div>
+  let [player, setPlayer] = useState({})
 
-      <form>
+  function handleAddPlayer(event) {
+    event.preventDefault()
+    const playerStringified = JSON.stringify(player)
+    fetch('https://localhost:5001/api/Players', {
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: playerStringified,
+      method: 'POST',
+    })
+  }
+
+  function handlePlayerFieldChanged(fieldName, value) {
+    const newPlayer = { ...player, [fieldName]: value }
+    setPlayer(newPlayer)
+  }
+
+  return (
+    <>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <Link to="#">Home</Link>
+          </li>
+        </ol>
+      </nav>
+      <div className="card">
+        <div className="card-header">Add a Player</div>
+
         <div className="form-group">
           <input
             type="text"
             className="form-control"
             id="name"
-            value="Player's Name"
+            placeholder="Player's Name"
+            onChange={event =>
+              handlePlayerFieldChanged('playerName', event.target.value)
+            }
           />
         </div>
 
@@ -21,11 +51,19 @@ export function AddPlayer() {
             className="form-control"
             id="name"
             placeholder="Team's Name"
+            onChange={event =>
+              handlePlayerFieldChanged('teamName', event.target.value)
+            }
           />
         </div>
 
         <div className="form-group">
-          <select class="form-control">
+          <select
+            className="form-control"
+            onChange={event =>
+              handlePlayerFieldChanged('position', event.target.value)
+            }
+          >
             <option>PG</option>
             <option>SG</option>
             <option>SF</option>
@@ -40,6 +78,12 @@ export function AddPlayer() {
             className="form-control"
             id="name"
             placeholder="Jersey Number"
+            onChange={event =>
+              handlePlayerFieldChanged(
+                'jerseyNumber',
+                parseInt(event.target.value)
+              )
+            }
           />
         </div>
 
@@ -48,7 +92,10 @@ export function AddPlayer() {
             type="int"
             className="form-control"
             id="name"
-            placeholder="Point"
+            placeholder="Points"
+            onChange={event =>
+              handlePlayerFieldChanged('points', parseInt(event.target.value))
+            }
           />
         </div>
 
@@ -58,6 +105,9 @@ export function AddPlayer() {
             className="form-control"
             id="name"
             placeholder="Rebounds"
+            onChange={event =>
+              handlePlayerFieldChanged('rebounds', parseInt(event.target.value))
+            }
           />
         </div>
 
@@ -67,6 +117,9 @@ export function AddPlayer() {
             className="form-control"
             id="name"
             placeholder="Blocks"
+            onChange={event =>
+              handlePlayerFieldChanged('blocks', parseInt(event.target.value))
+            }
           />
         </div>
 
@@ -76,13 +129,19 @@ export function AddPlayer() {
             className="form-control"
             id="name"
             placeholder="Steals"
+            onChange={event =>
+              handlePlayerFieldChanged('steals', parseInt(event.target.value))
+            }
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
-      </form>
-    </div>
+        <button
+          className="btn btn-primary"
+          onClick={event => handleAddPlayer(event)}
+        >
+          Submit
+        </button>
+      </div>
+    </>
   )
 }
