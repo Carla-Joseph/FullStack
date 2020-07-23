@@ -1,8 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export function Home() {
   const [players, setPlayers] = useState([])
+
+  useEffect(() => {
+    if (players.length !== 0) {
+      return
+    }
+
+    fetch('https://localhost:5001/api/Players')
+      .then(response => response.json())
+      .then(data => setPlayers(data))
+  })
+
+  function getTopPointsPlayers(metricName) {
+    return players
+      .sort((a, b) => b[metricName] - a[metricName])
+      .slice(0, 5)
+      .map(player => {
+        const { playerName, teamName, position } = player
+        const metricValue = player[[metricName]]
+        return (
+          <tr>
+            <td>{playerName}</td>
+            <td>{teamName}</td>
+            <td>{position}</td>
+            <td>{metricValue}</td>
+          </tr>
+        )
+      })
+  }
+
+  const topPointsPlayers = getTopPointsPlayers('points')
+  const topReboundsPlayers = getTopPointsPlayers('rebounds')
+  const topStealsPlayers = getTopPointsPlayers('steals')
+  const topBlocksPlayers = getTopPointsPlayers('blocks')
 
   return (
     <>
@@ -19,38 +52,7 @@ export function Home() {
                   <th>PPG</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Ezri Fontel </td>
-                  <td>Ecole Nationale Supérieur HS </td>
-                  <td>PG</td>
-                  <td>9.74</td>
-                </tr>
-                <tr>
-                  <td>Win Frushard </td>
-                  <td>Marlboro College </td>
-                  <td>C</td>
-                  <td>3.74</td>
-                </tr>
-                <tr>
-                  <td>Renee Luten </td>
-                  <td>High School of Arts and Crafts</td>
-                  <td>PF</td>
-                  <td>29.40</td>
-                </tr>
-                <tr>
-                  <td>Binnie Linton </td>
-                  <td>High School of Technology </td>
-                  <td>SG</td>
-                  <td>1.09</td>
-                </tr>
-                <tr>
-                  <td>Andrej Syalvester </td>
-                  <td>Institute of Pharmaceutical Sciences High School </td>
-                  <td>PF</td>
-                  <td>13.22</td>
-                </tr>
-              </tbody>
+              <tbody>{topPointsPlayers}</tbody>
             </table>
           </div>
 
@@ -65,38 +67,7 @@ export function Home() {
                   <th>RPG</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Ezri Fontel </td>
-                  <td>Ecole Nationale Supérieur de Géologie de Nancy </td>
-                  <td>PG</td>
-                  <td>5.74</td>
-                </tr>
-                <tr>
-                  <td>Win Frushard </td>
-                  <td>Marlboro College </td>
-                  <td>C</td>
-                  <td>9.14</td>
-                </tr>
-                <tr>
-                  <td>Renee Luten </td>
-                  <td>California College of Arts and Crafts</td>
-                  <td>PF</td>
-                  <td>9.40</td>
-                </tr>
-                <tr>
-                  <td>Binnie Linton </td>
-                  <td>Federal University of Technology, Yola </td>
-                  <td>SG</td>
-                  <td>3.09</td>
-                </tr>
-                <tr>
-                  <td>Andrej Syalvester </td>
-                  <td>Hokkaido Institute of Pharmaceutical Sciences </td>
-                  <td>PF</td>
-                  <td>10.22</td>
-                </tr>
-              </tbody>
+              <tbody>{topReboundsPlayers}</tbody>
             </table>
           </div>
 
@@ -111,38 +82,7 @@ export function Home() {
                   <th>SPG</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Ezri Fontel </td>
-                  <td>Ecole Nationale Supérieur de Géologie de Nancy </td>
-                  <td>PG</td>
-                  <td>2.74</td>
-                </tr>
-                <tr>
-                  <td>Win Frushard </td>
-                  <td>Marlboro College </td>
-                  <td>C</td>
-                  <td>0.14</td>
-                </tr>
-                <tr>
-                  <td>Renee Luten </td>
-                  <td>California College of Arts and Crafts</td>
-                  <td>PF</td>
-                  <td>1.40</td>
-                </tr>
-                <tr>
-                  <td>Binnie Linton </td>
-                  <td>Federal University of Technology, Yola </td>
-                  <td>SG</td>
-                  <td>4.09</td>
-                </tr>
-                <tr>
-                  <td>Andrej Syalvester </td>
-                  <td>Hokkaido Institute of Pharmaceutical Sciences </td>
-                  <td>PF</td>
-                  <td>1.02</td>
-                </tr>
-              </tbody>
+              <tbody>{topStealsPlayers}</tbody>
             </table>
           </div>
 
@@ -157,38 +97,7 @@ export function Home() {
                   <th>BPG</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>Ezri Fontel </td>
-                  <td>Ecole Nationale Supérieur de Géologie de Nancy </td>
-                  <td>PG</td>
-                  <td>1.74</td>
-                </tr>
-                <tr>
-                  <td>Win Frushard </td>
-                  <td>Marlboro College </td>
-                  <td>C</td>
-                  <td>4.7</td>
-                </tr>
-                <tr>
-                  <td>Renee Luten </td>
-                  <td>California College of Arts and Crafts</td>
-                  <td>PF</td>
-                  <td>1.40</td>
-                </tr>
-                <tr>
-                  <td>Binnie Linton </td>
-                  <td>Federal University of Technology, Yola </td>
-                  <td>SG</td>
-                  <td>0.09</td>
-                </tr>
-                <tr>
-                  <td>Andrej Syalvester </td>
-                  <td>Hokkaido Institute of Pharmaceutical Sciences </td>
-                  <td>PF</td>
-                  <td>2.60</td>
-                </tr>
-              </tbody>
+              <tbody>{topBlocksPlayers}</tbody>
             </table>
           </div>
         </section>
