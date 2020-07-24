@@ -35,14 +35,16 @@ export function Home() {
   const topPointsPlayers = getTopPointsPlayers('points')
   const topReboundsPlayers = getTopPointsPlayers('rebounds')
   const topStealsPlayers = getTopPointsPlayers('steals')
-  const topBlocksPlayers = getTopPointsPlayers('blocks')
+  const topAssistsPlayers = getTopPointsPlayers('assists')
 
   return (
     <>
       <div>
         <section>
           <div className="table">
-            <h1>POINTS PER GAME</h1>
+            <Link to={`/PPG`}>
+              <h1>POINTS PER GAME</h1>
+            </Link>
             <table className="table table-hover">
               <thead>
                 <tr>
@@ -57,7 +59,9 @@ export function Home() {
           </div>
 
           <div className="table">
+            <Link to={`/RPG`}>
             <h1>REBOUNDS PER GAME</h1>
+            </Link>
             <table className="table table-hover">
               <thead>
                 <tr>
@@ -72,7 +76,9 @@ export function Home() {
           </div>
 
           <div className="table">
+          <Link to={`/SPG`}>
             <h1>STEALS PER GAME</h1>
+            </Link>
             <table className="table table-hover">
               <thead>
                 <tr>
@@ -87,17 +93,19 @@ export function Home() {
           </div>
 
           <div className="table">
-            <h1>BLOCKS PER GAME</h1>
+          <Link to={`/APG`}>
+            <h1>ASSISTS PER GAME</h1>
+            </Link>
             <table className="table table-hover">
               <thead>
                 <tr>
                   <th>Player</th>
                   <th>School</th>
                   <th>Position</th>
-                  <th>BPG</th>
+                  <th>APG</th>
                 </tr>
               </thead>
-              <tbody>{topBlocksPlayers}</tbody>
+              <tbody>{topAssistsPlayers}</tbody>
             </table>
           </div>
         </section>

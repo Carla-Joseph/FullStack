@@ -5,7 +5,9 @@ import { Home } from './pages/Home'
 import HelloWorld from './pages/_template/HelloWorld'
 import { DeletePlayer } from './pages/DeletePlayer'
 import { AddPlayer } from './pages/AddPlayer'
-import NotFound from './pages/NotFound'
+import { StealsPerGame } from './pages/SPG'
+import { ReboundsPerGame } from './pages/RPG'
+import { AssistsPerGame } from './pages/APG'
 import './custom.scss'
 import { PointsPerGame } from './pages/PPG'
 
@@ -27,6 +29,15 @@ export default class App extends Component {
           </Route>
           <Route exact path="/ppg">
             <PointsPerGame />
+          </Route>
+          <Route exact path="/rpg">
+            <ReboundsPerGame />
+          </Route>
+          <Route exact path="/apg">
+            <AssistsPerGame />
+          </Route>
+          <Route exact path="/spg">
+            <StealsPerGame />
           </Route>
         </Switch>
       </Layout>
