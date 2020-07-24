@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './AddPlayer.scss'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 
 export function AddPlayer() {
   let [player, setPlayer] = useState({})
+  let [isModalOpen, setIsModalOpen] = useState(false)
+
+  const toggleModal = () => setIsModalOpen(!isModalOpen)
 
   function handleAddPlayer(event) {
     event.preventDefault()
@@ -20,7 +23,7 @@ export function AddPlayer() {
       .then(response => response.json())
       .then(data => {
         addPlayerForm.reset()
-        alert('Succesfully added player')
+        toggleModal()
       })
   }
 
@@ -75,6 +78,7 @@ export function AddPlayer() {
                 handlePlayerFieldChanged('position', event.target.value)
               }
             >
+              <label>Position</label>
               <option>PG</option>
               <option>SG</option>
               <option>SF</option>
@@ -160,6 +164,15 @@ export function AddPlayer() {
             Submit
           </button>
         </form>
+
+        <Modal isOpen={isModalOpen} toggle={toggleModal}>
+          <ModalBody>Successfully added player</ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={toggleModal}>
+              Ok
+            </Button>
+          </ModalFooter>
+        </Modal>
       </div>
     </>
   )
