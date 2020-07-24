@@ -1,7 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export function StealsPerGame() {
   const [players, setPlayers] = useState([])
+
+  useEffect(() => {
+    if (players.length !== 0) {
+      return
+    }
+
+    fetch('https://localhost:5001/api/Players')
+      .then(response => response.json())
+      .then(data => setPlayers(data))
+  })
 
   function getTopStealsPlayers(metricName) {
     return players
@@ -24,6 +35,13 @@ export function StealsPerGame() {
   const topStealsPlayers = getTopStealsPlayers('steals')
   return (
     <>
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <Link to="#">Home</Link>
+          </li>
+        </ol>
+      </nav>
       <div>
         <section>
           <div className="table">

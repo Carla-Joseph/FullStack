@@ -136,10 +136,10 @@ export function AddPlayer() {
               type="number"
               className="form-control"
               id="name"
-              placeholder="Blocks"
+              placeholder="Assists"
               required
               onChange={event =>
-                handlePlayerFieldChanged('blocks', parseInt(event.target.value))
+                handlePlayerFieldChanged('Assists', parseInt(event.target.value))
               }
             />
           </div>
