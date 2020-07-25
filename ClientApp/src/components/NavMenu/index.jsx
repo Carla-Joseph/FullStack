@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState, Component } from 'react'
 import {
   Collapse,
   Container,
@@ -10,6 +10,10 @@ import {
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import './style.scss'
+
+// export function NavbarSearch() {
+//   const [search, setSearch] = useState('')
+// }
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name
@@ -54,6 +58,8 @@ export class NavMenu extends Component {
                         type="text"
                         className="form-control"
                         placeholder="Search"
+                        value={search}
+                        onChange={event => setSearch(event.target.value)}
                       />
                     </div>
                     <button type="submit" className="btn btn-primary">
@@ -67,11 +73,6 @@ export class NavMenu extends Component {
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/players">
                     Players
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/typescript">
-                    {/* Typescript */}
                   </NavLink>
                 </NavItem>
                 <NavItem>
