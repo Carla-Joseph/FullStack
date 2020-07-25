@@ -58,8 +58,8 @@ export class NavMenu extends Component {
                         type="text"
                         className="form-control"
                         placeholder="Search"
-                        value={search}
-                        onChange={event => setSearch(event.target.value)}
+                        // value={search}
+                        // onChange={event => setSearch(event.target.value)}
                       />
                     </div>
                     <button type="submit" className="btn btn-primary">
