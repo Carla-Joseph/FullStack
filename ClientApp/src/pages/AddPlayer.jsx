@@ -13,7 +13,7 @@ export function AddPlayer() {
     const addPlayerForm = document.getElementById('addPlayerForm')
     addPlayerForm.reportValidity()
     const playerStringified = JSON.stringify(player)
-    fetch('https://localhost:5001/api/Players', {
+    fetch('/api/Players', {
       headers: {
         'content-type': 'application/json',
       },

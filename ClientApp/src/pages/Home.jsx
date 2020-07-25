@@ -9,7 +9,7 @@ export function Home() {
       return
     }
 
-    fetch('https://localhost:5001/api/Players')
+    fetch('/api/Players')
       .then(response => response.json())
       .then(data => setPlayers(data))
   })
