@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react'
+import React, { Component } from 'react'
 import {
   Collapse,
   Container,
@@ -33,9 +33,10 @@ export class NavMenu extends Component {
     })
   }
 
-  //   export function NavbarSearch() {
-  //   const [search, setSearch] = useState('')
-  // }
+  handleSearchChanged(searchValue) {
+    this.props.setSearchValue(searchValue)
+  }
+
   render() {
     return (
       <header>
@@ -61,8 +62,9 @@ export class NavMenu extends Component {
                         type="text"
                         className="form-control"
                         placeholder="Search"
-                        // value={search}
-                        // onChange={event => setSearch(event.target.value)}
+                        onChange={event =>
+                          this.handleSearchChanged(event.target.value)
+                        }
                       />
                     </div>
                     <Link className="btn btn-success mr-2" to="/signup">

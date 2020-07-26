@@ -16,11 +16,25 @@ import { SignUp } from './pages/Signup'
 export default class App extends Component {
   static displayName = App.name
 
+  state = {
+    searchValue: '',
+  }
+
+  setSearchValue(searchValue) {
+    this.setState({
+      searchValue,
+    })
+  }
+
   render() {
     return (
-      <Layout>
+      <Layout setSearchValue={this.setSearchValue.bind(this)}>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route
+            exact
+            path="/"
+            render={() => <Home searchValue={this.state.searchValue} />}
+          />
           <Route path="/signup">
             <SignUp />
           </Route>

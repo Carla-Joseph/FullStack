@@ -8,9 +8,12 @@ export function Layout(props) {
   const [activeSearch, setActiveSearch] = useState('')
   return (
     <div>
-      
-      <NavMenu activeSearch={activeSearch} setActiveSearch={setActiveSearch} />
-     
+      <NavMenu
+        activeSearch={activeSearch}
+        setActiveSearch={setActiveSearch}
+        setSearchValue={props.setSearchValue}
+      />
+
       <Container>{props.children}</Container>
     </div>
   )
