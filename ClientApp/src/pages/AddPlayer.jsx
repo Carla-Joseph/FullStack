@@ -44,7 +44,7 @@ export function AddPlayer() {
       <div className="card">
         <div className="card-header">Add a Player</div>
 
-        <form id="addPlayerForm">
+        {/* <form id="addPlayerForm"> */}
           <div className="form-group">
             <input
               type="text"
@@ -163,7 +163,7 @@ export function AddPlayer() {
           >
             Submit
           </button>
-        </form>
+        {/* </form> */}
 
         <Modal isOpen={isModalOpen} toggle={toggleModal}>
           <ModalBody>Successfully added player</ModalBody>

@@ -11,9 +11,9 @@ import {
 import { Link } from 'react-router-dom'
 import './style.scss'
 
-// export function NavbarSearch() {
-//   const [search, setSearch] = useState('')
-// }
+const handleClickSearch = event => {
+  console.log('Searched')
+}
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name
@@ -33,6 +33,9 @@ export class NavMenu extends Component {
     })
   }
 
+  //   export function NavbarSearch() {
+  //   const [search, setSearch] = useState('')
+  // }
   render() {
     return (
       <header>
@@ -62,7 +65,11 @@ export class NavMenu extends Component {
                         // onChange={event => setSearch(event.target.value)}
                       />
                     </div>
-                    <button type="submit" className="btn btn-primary">
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      onClick="{handleClickSearch}"
+                    >
                       Submit
                     </button>
                   </form>
