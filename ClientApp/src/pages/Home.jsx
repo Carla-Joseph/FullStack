@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-export function Home() {
+export function Home(props) {
   const [players, setPlayers] = useState([])
 
   useEffect(() => {
@@ -17,6 +17,10 @@ export function Home() {
   function getTopPointsPlayers(metricName) {
     return players
       .sort((a, b) => b[metricName] - a[metricName])
+      .filter(player => {
+        const searchTermProcessed = props.searchValue.toLowerCase()
+        return player.playerName.toLowerCase().includes(searchTermProcessed)
+      })
       .slice(0, 5)
       .map(player => {
         const { playerName, teamName, position } = player
@@ -60,7 +64,7 @@ export function Home() {
 
           <div className="table">
             <Link to={`/RPG`}>
-            <h1>REBOUNDS PER GAME</h1>
+              <h1>REBOUNDS PER GAME</h1>
             </Link>
             <table className="table table-hover">
               <thead>
@@ -76,8 +80,8 @@ export function Home() {
           </div>
 
           <div className="table">
-          <Link to={`/SPG`}>
-            <h1>STEALS PER GAME</h1>
+            <Link to={`/SPG`}>
+              <h1>STEALS PER GAME</h1>
             </Link>
             <table className="table table-hover">
               <thead>
@@ -93,8 +97,8 @@ export function Home() {
           </div>
 
           <div className="table">
-          <Link to={`/APG`}>
-            <h1>ASSISTS PER GAME</h1>
+            <Link to={`/APG`}>
+              <h1>ASSISTS PER GAME</h1>
             </Link>
             <table className="table table-hover">
               <thead>

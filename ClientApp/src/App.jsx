@@ -11,7 +11,7 @@ import { AssistsPerGame } from './pages/APG'
 import './custom.scss'
 import { PointsPerGame } from './pages/PPG'
 import { SignUp } from './pages/Signup'
-// import { NavBar } from  './NavMenu/index.jsx'
+import { SignIn } from './pages/Signin'
 
 export default class App extends Component {
   static displayName = App.name
@@ -37,6 +37,9 @@ export default class App extends Component {
           />
           <Route path="/signup">
             <SignUp />
+          </Route>
+          <Route path="/signin">
+            <SignIn />
           </Route>
           <Route exact path="/players" />
           {/* <Route exact path="/typescript" component={HeyWorld} /> */}

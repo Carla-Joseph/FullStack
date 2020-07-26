@@ -67,16 +67,19 @@ export class NavMenu extends Component {
                         }
                       />
                     </div>
-                    <Link className="btn btn-success mr-2" to="/signup">
-                      Signup
-                    </Link>
                     <button
                       type="submit"
-                      className="btn btn-primary"
+                      className="btn btn-primary mr-2"
                       onClick="{handleClickSearch}"
                     >
                       Submit
                     </button>
+                    <Link className="btn btn-primary mr-2" to="/signup">
+                      Signup
+                    </Link>
+                    <Link className="btn btn-primary mr-2" to="/signin">
+                      Signin
+                    </Link>
                   </form>
                   <NavLink tag={Link} className="text-dark" to="/">
                     Home
