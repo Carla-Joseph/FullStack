@@ -65,6 +65,9 @@ export class NavMenu extends Component {
                         // onChange={event => setSearch(event.target.value)}
                       />
                     </div>
+                    <Link className="btn btn-success mr-2" to="/signup">
+                      Signup
+                    </Link>
                     <button
                       type="submit"
                       className="btn btn-primary"

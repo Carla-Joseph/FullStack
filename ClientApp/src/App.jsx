@@ -10,6 +10,7 @@ import { ReboundsPerGame } from './pages/RPG'
 import { AssistsPerGame } from './pages/APG'
 import './custom.scss'
 import { PointsPerGame } from './pages/PPG'
+import { SignUp } from './pages/Signup'
 // import { NavBar } from  './NavMenu/index.jsx'
 
 export default class App extends Component {
@@ -20,6 +21,9 @@ export default class App extends Component {
       <Layout>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/signup">
+            <SignUp />
+          </Route>
           <Route exact path="/players" />
           {/* <Route exact path="/typescript" component={HeyWorld} /> */}
           <Route exact path="/addplayer">
