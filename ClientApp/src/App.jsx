@@ -2,7 +2,6 @@ import React, { useState, Component } from 'react'
 import { Route, Switch } from 'react-router'
 import { Layout } from './components/Layout'
 import { Home } from './pages/Home'
-import HelloWorld from './pages/_template/HelloWorld'
 import { DeletePlayer } from './pages/DeletePlayer'
 import { AddPlayer } from './pages/AddPlayer'
 import { StealsPerGame } from './pages/SPG'
@@ -13,6 +12,7 @@ import { PointsPerGame } from './pages/PPG'
 import { SignUp } from './pages/Signup'
 import { SignIn } from './pages/Signin'
 import { ShowPlayers } from './pages/ShowPlayers'
+import { Players } from './pages/Players'
 
 export default class App extends Component {
   static displayName = App.name
@@ -42,8 +42,9 @@ export default class App extends Component {
           <Route path="/signin">
             <SignIn />
           </Route>
-          <Route exact path="/players" />
-          {/* <Route exact path="/typescript" component={HeyWorld} /> */}
+          <Route exact path="/players">
+          <Players />
+          </Route>
           <Route exact path="/addplayer">
             <AddPlayer />
           </Route>

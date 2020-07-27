@@ -8,10 +8,6 @@ export default class HomePageDefaultBody extends Component {
     return (
       this.props.players
         .sort((a, b) => b[metricName] - a[metricName])
-        // .filter(player => {
-        //   const searchTermProcessed = this.props.searchValue.toLowerCase()
-        //   return player.playerName.toLowerCase().includes(searchTermProcessed)
-        // })
         .slice(0, 5)
         .map(player => {
           const { playerName, teamName, position } = player

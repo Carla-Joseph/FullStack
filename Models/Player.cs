@@ -14,5 +14,6 @@ namespace FullStack.Models
         public int Rebounds { get; set; }
         public int Steals { get; set; }
         public int Blocks { get; set; }
+        public int creationUserID { get; set; }
     }
 }

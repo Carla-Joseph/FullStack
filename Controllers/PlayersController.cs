@@ -28,7 +28,7 @@ namespace FullStack.Controllers
 
         // GET: api/Players
         //
-        // Returns a list of all your Players
+        // Returns a list of all Players
         //
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Player>>> GetPlayers(string search)
@@ -42,6 +42,16 @@ namespace FullStack.Controllers
             {
                 return await _context.Players.Where(player => player.PlayerName.Contains(search)).ToListAsync();
             }
+        }
+
+        // GET: api/Players/mine/3
+        //
+        // Returns a list of all your Players, where 3 is your user ID
+        //
+        [HttpGet("mine/{idOfCurrentUser}")]
+        public async Task<ActionResult<IEnumerable<Player>>> GetMyPlayers(int idOfCurrentUser)
+        {
+            return await _context.Players.Where(player => player.creationUserID == idOfCurrentUser).ToListAsync();
         }
 
         // GET: api/Players/5

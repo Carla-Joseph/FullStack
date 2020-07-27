@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { getUserId } from '../auth'
 
 export function AddPlayer() {
   let [player, setPlayer] = useState({})
@@ -12,16 +13,20 @@ export function AddPlayer() {
     event.preventDefault()
     const addPlayerForm = document.getElementById('addPlayerForm')
     addPlayerForm.reportValidity()
-    const playerStringified = JSON.stringify(player)
-    fetch('/api/Players', {
+
+    const idOfCurrentUser = getUserId()
+    player.creationUserID = idOfCurrentUser
+    const body = JSON.stringify(player)
+
+    fetch(`/api/Players`, {
       headers: {
         'content-type': 'application/json',
       },
-      body: playerStringified,
+      body,
       method: 'POST',
     })
       .then(response => response.json())
-      .then(data => {
+      .then(() => {
         addPlayerForm.reset()
         toggleModal()
       })
@@ -43,19 +48,20 @@ export function AddPlayer() {
       </nav>
       <div className="card">
         <div className="card-header">Add a Player</div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control"
-              id="name"
-              placeholder="Player's Name"
-              required
-              onChange={event =>
-                handlePlayerFieldChanged('playerName', event.target.value)
-              }
-            />
-          </div>
+        <div className="form-group">
+          <input
+            type="text"
+            className="form-control"
+            id="name"
+            placeholder="Player's Name"
+            required
+            onChange={event =>
+              handlePlayerFieldChanged('playerName', event.target.value)
+            }
+          />
+        </div>
 
+        <form id="addPlayerForm">
           <div className="form-group">
             <input
               type="text"
@@ -137,7 +143,10 @@ export function AddPlayer() {
               placeholder="Assists"
               required
               onChange={event =>
-                handlePlayerFieldChanged('Assists', parseInt(event.target.value))
+                handlePlayerFieldChanged(
+                  'Assists',
+                  parseInt(event.target.value)
+                )
               }
             />
           </div>
@@ -161,6 +170,7 @@ export function AddPlayer() {
           >
             Submit
           </button>
+        </form>
         <Modal isOpen={isModalOpen} toggle={toggleModal}>
           <ModalBody>Successfully added player</ModalBody>
           <ModalFooter>

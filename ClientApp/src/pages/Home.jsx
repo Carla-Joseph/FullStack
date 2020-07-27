@@ -16,10 +16,8 @@ export function Home(props) {
   })
 
   if (props.searchValue.length > 0) {
-    // show matching players in individual player layout
     return <ShowPlayers searchValue={props.searchValue} players={players} />
   }
 
-  // show top 5s
   return <HomePageDefaultBody players={players} />
 }
