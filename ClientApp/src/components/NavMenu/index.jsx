@@ -16,6 +16,12 @@ const handleClickSearch = event => {
   console.log('Searched')
 }
 
+const handleLogout = () => {
+  logout()
+
+  window.location = '/'
+}
+
 export class NavMenu extends Component {
   static displayName = NavMenu.name
 
@@ -92,9 +98,11 @@ export class NavMenu extends Component {
                   </form>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/players">
-                    Players
-                  </NavLink>
+                  {isLoggedIn() && (
+                    <NavLink tag={Link} className="text-dark" to="/players">
+                      Players
+                    </NavLink>
+                  )}
                 </NavItem>
                 <NavItem>
                   {isLoggedIn() && (
@@ -106,12 +114,12 @@ export class NavMenu extends Component {
               </ul>
             </Collapse>
           </Container>
+          {isLoggedIn() && (
+            <span className="btn btn-primary" onClick={handleLogout}>
+              Sign out
+            </span>
+          )}
         </Navbar>
-        {isLoggedIn() && (
-          <span className="btn btn-success" onClick={handleLogout}>
-            Sign out
-          </span>
-        )}
       </header>
     )
   }

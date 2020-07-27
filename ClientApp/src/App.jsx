@@ -12,6 +12,7 @@ import './custom.scss'
 import { PointsPerGame } from './pages/PPG'
 import { SignUp } from './pages/Signup'
 import { SignIn } from './pages/Signin'
+import { ShowPlayers } from './pages/ShowPlayers'
 
 export default class App extends Component {
   static displayName = App.name
@@ -60,6 +61,9 @@ export default class App extends Component {
           </Route>
           <Route exact path="/spg">
             <StealsPerGame />
+          </Route>
+          <Route exact path="/showplayers">
+            <ShowPlayers />
           </Route>
         </Switch>
       </Layout>
