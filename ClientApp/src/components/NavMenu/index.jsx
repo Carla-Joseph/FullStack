@@ -10,6 +10,7 @@ import {
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import './style.scss'
+import { isLoggedIn, logout } from '../../auth'
 
 const handleClickSearch = event => {
   console.log('Searched')
@@ -48,6 +49,9 @@ export class NavMenu extends Component {
             <NavbarBrand tag={Link} to="/">
               🏀 FullStack
             </NavbarBrand>
+            <NavLink tag={Link} className="text-dark" to="/">
+              Home
+            </NavLink>
             <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
             <Collapse
               className="d-sm-inline-flex flex-sm-row-reverse"
@@ -67,23 +71,25 @@ export class NavMenu extends Component {
                         }
                       />
                     </div>
-                    <button
+                    {/* <button
                       type="submit"
                       className="btn btn-primary mr-2"
                       onClick="{handleClickSearch}"
                     >
                       Submit
-                    </button>
-                    <Link className="btn btn-primary mr-2" to="/signup">
-                      Signup
-                    </Link>
-                    <Link className="btn btn-primary mr-2" to="/signin">
-                      Signin
-                    </Link>
+                    </button> */}
+
+                    {!isLoggedIn() && (
+                      <Link className="btn btn-primary mr-2" to="/signup">
+                        Sign Up
+                      </Link>
+                    )}
+                    {!isLoggedIn() && (
+                      <Link className="btn btn-primary mr-2" to="/signin">
+                        Sign In
+                      </Link>
+                    )}
                   </form>
-                  <NavLink tag={Link} className="text-dark" to="/">
-                    Home
-                  </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/players">
@@ -91,14 +97,21 @@ export class NavMenu extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/addplayer">
-                    Add Players
-                  </NavLink>
+                  {isLoggedIn() && (
+                    <NavLink tag={Link} className="text-dark" to="/addplayer">
+                      Add Players
+                    </NavLink>
+                  )}
                 </NavItem>
               </ul>
             </Collapse>
           </Container>
         </Navbar>
+        {isLoggedIn() && (
+          <span className="btn btn-success" onClick={handleLogout}>
+            Sign out
+          </span>
+        )}
       </header>
     )
   }
