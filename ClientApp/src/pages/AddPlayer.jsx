@@ -43,8 +43,6 @@ export function AddPlayer() {
       </nav>
       <div className="card">
         <div className="card-header">Add a Player</div>
-
-        {/* <form id="addPlayerForm"> */}
           <div className="form-group">
             <input
               type="text"
@@ -163,8 +161,6 @@ export function AddPlayer() {
           >
             Submit
           </button>
-        {/* </form> */}
-
         <Modal isOpen={isModalOpen} toggle={toggleModal}>
           <ModalBody>Successfully added player</ModalBody>
           <ModalFooter>
