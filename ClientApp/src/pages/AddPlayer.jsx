@@ -163,13 +163,14 @@ export function AddPlayer() {
               }
             />
           </div>
-
-          <button
-            className="btn btn-primary"
-            onClick={event => handleAddPlayer(event)}
-          >
-            Submit
-          </button>
+          <div className="form-group">
+            <button
+              className="btn btn-primary"
+              onClick={event => handleAddPlayer(event)}
+            >
+              Submit
+            </button>
+          </div>
         </form>
         <Modal isOpen={isModalOpen} toggle={toggleModal}>
           <ModalBody>Successfully added player</ModalBody>

@@ -66,7 +66,15 @@ export class Players extends React.Component {
               <th>SPG</th>
             </tr>
           </thead>
-          <tbody>{formattedUsers}</tbody>
+          <tbody>
+            {formattedUsers}
+            <div className="form-group">
+              <button type="submit" className="btn btn-primary">
+                Delete
+              </button>
+              <pre>{player.userID}</pre>
+            </div>
+          </tbody>
         </table>
       </div>
     )
