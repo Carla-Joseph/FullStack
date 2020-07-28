@@ -52,7 +52,7 @@ export class NavMenu extends Component {
           light
         >
           <Container>
-            <NavbarBrand tag={Link} to="/">
+            <NavbarBrand tag={Link} to="/" className="logo">
               🏀 FullStack
             </NavbarBrand>
             <NavLink tag={Link} className="text-dark" to="/">
@@ -67,10 +67,10 @@ export class NavMenu extends Component {
               <ul className="navbar-nav flex-grow">
                 <NavItem>
                   <form className="navbar-form navbar-left" role="search">
-                    <div className="form-group">
+                    <div className="mr-3">
                       <input
                         type="text"
-                        className="form-control"
+                        className="form-control "
                         placeholder="Search"
                         onChange={event =>
                           this.handleSearchChanged(event.target.value)

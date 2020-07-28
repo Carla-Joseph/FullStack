@@ -71,10 +71,11 @@ export function SignIn() {
               onChange={handleFieldChange}
             />
           </div>
-
-          <button type="submit" className="btn btn-primary">
-            Submit
-          </button>
+          <div className="form-group">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

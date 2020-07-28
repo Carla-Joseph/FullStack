@@ -1,7 +1,7 @@
 ﻿a.navbar-brand {
   white-space: normal;
   text-align: center;
-  word-break: break-all;
+  // word-break: break-all;
 }
 
 html {
@@ -20,7 +20,7 @@ html {
 form {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 button {

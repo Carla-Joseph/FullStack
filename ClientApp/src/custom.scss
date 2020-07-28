@@ -26,7 +26,6 @@ div h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 section {
@@ -35,7 +34,7 @@ section {
 }
 
 .form-group {
-  display: flex;
+  // display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 7px;
@@ -51,4 +50,13 @@ h2 {
   align-items: center;
   margin: 2rem;
   color: rgb(63, 46, 161);
+}
+
+button .submit {
+  border: 4rem;
+  color: red;
+}
+
+.logo {
+  opacity: 1;
 }
