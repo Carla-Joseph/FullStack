@@ -12,17 +12,21 @@ code {
   border-color: #1861ac;
 }
 
-.table div {
-  display: block;
-  flex-direction: row;
-  max-width: 500px;
-  margin: 2rem;
-}
+// div .table {
+//   display: grid;
+//   flex-direction: row;
+//   align-items: flex-end;
+//   max-width: 650px;
+//   margin: 2rem;
+//   color: red;
+//   border: thick black solid;
+// }
 
 div h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 section {
