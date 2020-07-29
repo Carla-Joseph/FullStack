@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+body {
+  font-family: 'Nanum Gothic';
+  background-color: #fff;
+}
+
 a {
-  color: #0366d6;
+  color: #188194;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 code {
@@ -11,16 +22,6 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-
-// div .table {
-//   display: grid;
-//   flex-direction: row;
-//   align-items: flex-end;
-//   max-width: 650px;
-//   margin: 2rem;
-//   color: red;
-//   border: thick black solid;
-// }
 
 div h1 {
   display: flex;
@@ -34,7 +35,6 @@ section {
 }
 
 .form-group {
-  // display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 7px;
@@ -57,6 +57,19 @@ button .submit {
   color: red;
 }
 
-.logo {
-  opacity: 1;
+
+.main-table {
+  margin: 2rem;
+  border: black solid 1px;
+  width: 400px;
+}
+
+// form {
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-end;
+// }
+
+.position-selection {
+  width: fit-content;
 }
