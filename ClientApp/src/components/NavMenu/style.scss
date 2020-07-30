@@ -16,6 +16,12 @@ html {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
+ .navbar-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 button {
   background-color: none;
 }
@@ -23,3 +29,4 @@ button {
 .logo {
   opacity: 1;
 }
+
