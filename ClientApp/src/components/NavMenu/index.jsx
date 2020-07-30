@@ -53,7 +53,7 @@ export class NavMenu extends Component {
         >
           <Container>
             <NavbarBrand tag={Link} to="/" className="logo">
-              🏀 FullStack
+              Varsity 🏀
             </NavbarBrand>
             <NavLink tag={Link} className="text-dark" to="/">
               Home
