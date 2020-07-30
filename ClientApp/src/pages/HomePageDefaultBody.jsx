@@ -33,9 +33,9 @@ export default class HomePageDefaultBody extends Component {
     return (
       <div>
         <section>
-          <div className="table">
+          <div className="main-table">
             <Link to={`/PPG`}>
-              <h1>POINTS PER GAME</h1>
+              <h1>POINTS / GAME</h1>
             </Link>
             <table className="table table-hover">
               <thead>
@@ -50,9 +50,9 @@ export default class HomePageDefaultBody extends Component {
             </table>
           </div>
 
-          <div className="table">
+          <div className="main-table">
             <Link to={`/RPG`}>
-              <h1>REBOUNDS PER GAME</h1>
+              <h1>REBOUNDS / GAME</h1>
             </Link>
             <table className="table table-hover">
               <thead>
@@ -67,9 +67,9 @@ export default class HomePageDefaultBody extends Component {
             </table>
           </div>
 
-          <div className="table">
+          <div className="main-table">
             <Link to={`/SPG`}>
-              <h1>STEALS PER GAME</h1>
+              <h1>STEALS / GAME</h1>
             </Link>
             <table className="table table-hover">
               <thead>
@@ -84,9 +84,9 @@ export default class HomePageDefaultBody extends Component {
             </table>
           </div>
 
-          <div className="table">
+          <div className="main-table">
             <Link to={`/APG`}>
-              <h1>ASSISTS PER GAME</h1>
+              <h1>ASSISTS / GAME</h1>
             </Link>
             <table className="table table-hover">
               <thead>

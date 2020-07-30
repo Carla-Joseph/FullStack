@@ -42,7 +42,6 @@ export function ReboundsPerGame() {
           </li>
         </ol>
       </nav>
-
       <div>
         <section>
           <div className="table">

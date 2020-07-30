@@ -54,7 +54,6 @@ export function ShowPlayers(props) {
         </thead>
         <tbody>
           {matchedPlayers}
-        
         </tbody>
       </table>
     </div>

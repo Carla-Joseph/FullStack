@@ -46,22 +46,23 @@ export function AddPlayer() {
           </li>
         </ol>
       </nav>
-      <div className="card">
-        <div className="card-header">Add a Player</div>
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            placeholder="Player's Name"
-            required
-            onChange={event =>
-              handlePlayerFieldChanged('playerName', event.target.value)
-            }
-          />
-        </div>
 
+      <div className="card">
         <form id="addPlayerForm">
+          <div className="card-header">Add a Player</div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              placeholder="Player's Name"
+              required
+              onChange={event =>
+                handlePlayerFieldChanged('playerName', event.target.value)
+              }
+            />
+          </div>
+
           <div className="form-group">
             <input
               type="text"
@@ -82,7 +83,7 @@ export function AddPlayer() {
                 handlePlayerFieldChanged('position', event.target.value)
               }
             >
-              <label>Position</label>
+              <option selected className="position">Position</option>
               <option>PG</option>
               <option>SG</option>
               <option>SF</option>

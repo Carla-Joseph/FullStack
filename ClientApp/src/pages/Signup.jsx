@@ -59,7 +59,6 @@ export function SignUp() {
               onChange={handleFieldChange}
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -70,7 +69,6 @@ export function SignUp() {
               onChange={handleFieldChange}
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input

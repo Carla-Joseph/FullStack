@@ -2,7 +2,6 @@ import React, { useState, Component } from 'react'
 import { Route, Switch } from 'react-router'
 import { Layout } from './components/Layout'
 import { Home } from './pages/Home'
-import { DeletePlayer } from './pages/DeletePlayer'
 import { AddPlayer } from './pages/AddPlayer'
 import { StealsPerGame } from './pages/SPG'
 import { ReboundsPerGame } from './pages/RPG'
@@ -43,13 +42,10 @@ export default class App extends Component {
             <SignIn />
           </Route>
           <Route exact path="/players">
-          <Players />
+            <Players />
           </Route>
           <Route exact path="/addplayer">
             <AddPlayer />
-          </Route>
-          <Route exact path="/deleteplayer">
-            <DeletePlayer />
           </Route>
           <Route exact path="/ppg">
             <PointsPerGame />

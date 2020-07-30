@@ -77,14 +77,6 @@ export class NavMenu extends Component {
                         }
                       />
                     </div>
-                    {/* <button
-                      type="submit"
-                      className="btn btn-primary mr-2"
-                      onClick="{handleClickSearch}"
-                    >
-                      Submit
-                    </button> */}
-
                     {!isLoggedIn() && (
                       <Link className="btn btn-primary mr-2" to="/signup">
                         Sign Up
@@ -92,7 +84,7 @@ export class NavMenu extends Component {
                     )}
                     {!isLoggedIn() && (
                       <Link className="btn btn-primary mr-2" to="/signin">
-                        Sign In
+                        Login
                       </Link>
                     )}
                   </form>

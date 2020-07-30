@@ -1,7 +1,8 @@
 import React from 'react'
-import { getUser, getUserId } from '../auth'
+import { getUser, getUserId, authHeader } from '../auth'
+import { useHistory, withRouter } from 'react-router'
 
-export class Players extends React.Component {
+class PlayersComponent extends React.Component {
   state = {
     players: [],
   }
@@ -18,11 +19,25 @@ export class Players extends React.Component {
       })
   }
 
+  handleDelete = (event, id) => {
+    event.preventDefault()
+
+    fetch(`/api/Players/${id}`, {
+      method: 'DELETE',
+      headers: { ...authHeader() },
+    }).then(response => {
+      if (response.status === 204) {
+        this.props.history.push('/')
+      }
+    })
+  }
+
   getFormattedPlayers() {
     return this.state.players
       .sort((a, b) => b.playerName - a.playerName)
       .map(player => {
         const {
+          id,
           playerName,
           teamName,
           position,
@@ -32,6 +47,7 @@ export class Players extends React.Component {
           assists,
           steals,
         } = player
+        console.log(id)
         return (
           <tr>
             <td>{playerName}</td>
@@ -42,6 +58,14 @@ export class Players extends React.Component {
             <td>{rebounds}</td>
             <td>{assists}</td>
             <td>{steals}</td>
+            <td>
+              <button
+                className="btn btn-primary btn-sm"
+                onClick={event => this.handleDelete(event, id)}
+              >
+                Delete
+              </button>
+            </td>
           </tr>
         )
       })
@@ -64,19 +88,17 @@ export class Players extends React.Component {
               <th>RPG</th>
               <th>APG</th>
               <th>SPG</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {formattedUsers}
-            <div className="form-group">
-              <button type="submit" className="btn btn-primary">
-                Delete
-              </button>
-              <pre>{player.userID}</pre>
-            </div>
+            <div className="form-group"></div>
           </tbody>
         </table>
       </div>
     )
   }
 }
+
+export const Players = withRouter(PlayersComponent)
